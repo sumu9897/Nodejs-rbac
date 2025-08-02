@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import  {dbConnect}  from "./config/dbConnect.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config()
 
@@ -15,7 +16,7 @@ app.use(express.json())
 
 // Routes
 
-
+app.use("/api/auth", authRoutes)
 
 // Start the server
 
